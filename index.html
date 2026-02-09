@@ -1,51 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para Allison 💖</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      color: #fff;
-      padding: 40px;
-    }
-    h1 {
-      font-size: 3em;
-    }
-    p {
-      font-size: 1.3em;
-      max-width: 700px;
-      margin: auto;
-    }
-    iframe {
-      margin-top: 30px;
-      border-radius: 12px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Para Allison 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 380px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    animation: aparecer 1.2s ease;
+}
+
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff758c;
+    margin-top: 25px;
+}
+
+p {
+    color: #555;
+    font-size: 1.05em;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff2e55;
+    transform: scale(1.05);
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* corazones */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Allison 💘</h1>
+<div class="card">
+    <h1>Allison 💖</h1>
 
-  <p>
-    En un solo día entendí que hay personas que llegan sin avisar  
-    y se quedan sin pedir permiso.  
-    Esta canción dice mucho de lo que no siempre sé decir…  
-    pero lo siento bonito cuando pienso en ti 💕
-  </p>
+    <p>
+        No soy bueno con discursos largos,  
+        pero sí con sentimientos sinceros.
+        <br><br>
+        Desde que llegaste, todo es más bonito,
+        más divertido y más real.
+    </p>
 
-  <h2>🎶 Allison — Morat 🎶</h2>
+    <p>
+        Así que hoy quiero preguntarte algo
+        importante…
+    </p>
 
-  <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/fqHJh3lpVzc"
-    title="Allison - Morat"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+    <h2>¿Quieres ser mi San Valentín? 💘</h2>
+
+    <button onclick="acepta()">Sí, acepto 💕</button>
+
+    <p style="margin-top:30px; font-size:1.1em;">
+        Con cariño,<br>
+        <strong>Gerson 💖</strong>
+    </p>
+
+    <h2>🎶 Allison — Morat 🎶</h2>
+
+    <iframe width="100%" height="215"
+        src="https://www.youtube.com/embed/fqHJh3lpVzc?autoplay=1&mute=1"
+        title="Allison - Morat"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+function acepta() {
+    alert("Sabía que dirías que sí 💖✨");
+}
+
+// corazones flotando
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 500);
+</script>
 
 </body>
 </html>
-
